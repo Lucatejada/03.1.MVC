@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ejemplo MVC</title>
+    <title> Ejemplo MVC </title>
 
     <comm-html-section>
         <!-- PLUGGINS CSS -->
@@ -42,24 +42,21 @@
             <ul class="nav justify-content-center nav-pills">
 
                 <?php if (isset($_GET["pagina"])) : ?>
-
                     <?php if ($_GET["pagina"] == "registro") : ?>
-
                         <li class="nav-item">
                             <a class="nav-link active" href="index.php?pagina=registro">Registro</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?pagina=ingreso">Ingreso</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?pagina=inicio">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?pagina=salir">Salir</a>
                         </li>
-                    <?php endif  ?>
-                    
+                    <?php endif ?>
+
                     <?php if ($_GET["pagina"] == "ingreso") : ?>
 
                         <li class="nav-item">
@@ -94,6 +91,10 @@
                         </li>
                     <?php endif  ?>
 
+
+                <?php else: 
+                    header('location: ../index.php?pagina=inicio');
+                ?>
                 <?php endif  ?>
 
 
@@ -122,13 +123,12 @@
                 ) {
 
                     include "paginas/" . $_GET["pagina"] . ".php";
-
                 } else {
 
                     include "paginas/error404.php";
                 }
-
             } else {
+
                 include "paginas/registro.php";
             }
 
