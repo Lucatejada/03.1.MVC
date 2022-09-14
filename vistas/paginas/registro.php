@@ -1,10 +1,10 @@
-<div class="d-flex justify-content-center py-3">
+<div class="d-flex justify-content-center p-3">
 
-<form class="p-5 bg-light" method="POST">
+<form method="POST">
 
-<h3 class="text-center py-3">Registro</h3>
+<h3 class="text-center">Registro</h3>
 <div class="text-center" > 
-    <div class="form-group ">
+    <div class="form-group mb-3">
         <label for="nombre">Nombre:</label>
         <div class="input-group">
             <div class="input-group-prepend  d-flex flex-row">
@@ -17,7 +17,7 @@
 
     <div class="form-group">
         <label for="email">Email:</label>
-        <div class="input-group">
+        <div class="input-group mb-3">
             <div class="input-group-prepend  d-flex flex-row">
                 <span class="input-group-text">
                     <i class="fa-solid fa-envelope"></i> 
@@ -31,9 +31,7 @@
 
     <div class="form-group">
         <label for="pwd">Contraseña:</label>
-        
-
-        <div class="input-group">
+        <div class="input-group mb-3">
             <div class="input-group-prepend  d-flex flex-row">
                 <span class="input-group-text">
                 <i class="fa-solid fa-key"></i>
@@ -61,7 +59,9 @@
 
         echo '<div class="alert alert-success"> El usuario ha sido registrado </div>';
 
-        //
+        // script para guardar una sola vez el usuario de los imputs.
+        // limpiamos el almacenamiento del navegador
+
        echo '<script>
         if ( window.history.replaceState ) {
             window.history.replaceState ( null , null , window.location.href ) ;

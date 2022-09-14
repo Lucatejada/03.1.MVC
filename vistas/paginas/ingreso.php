@@ -18,9 +18,7 @@
             
         </div>
     </div>
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">Submit</button>
-        </div>
+    <div class="form-group text-center py-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
     </div>
 </form>
