@@ -53,8 +53,20 @@
 
     $registro = controladorFormulario::ctrRegistro();
 
+
+
     if($registro == "ok"){
+
+        //mensaje de registro exitoso!
+
         echo '<div class="alert alert-success"> El usuario ha sido registrado </div>';
+
+        //
+       echo '<script>
+        if ( window.history.replaceState ) {
+            window.history.replaceState ( null , null , window.location.href ) ;
+        }
+        </script>';
     }
     ?>
 
