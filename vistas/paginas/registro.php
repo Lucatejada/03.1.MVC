@@ -49,8 +49,7 @@
 
     //creamos el objeto de php e instanciamos metodo estatico
 
-    $registro = controladorFormulario::ctrRegistro();
-
+    $registro = ControladorFormularios::ctrRegistro();
 
 
     if($registro == "ok"){
