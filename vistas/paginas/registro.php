@@ -10,7 +10,7 @@
             <div class="input-group-prepend  d-flex flex-row">
                 <span class="input-group-text "> 
                     <i class="fas fa-user"></i> </span>
-                <input type="text" class="form-control" id="nombre" name="regisNombre" placeholder="Ingrese su nombre">
+                <input type="text" class="form-control" id="nombre" name="registroNombre" placeholder="Ingrese su nombre">
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
                 <span class="input-group-text">
                     <i class="fa-solid fa-envelope"></i> 
                 </span>
-                <input type="email" class="form-control" id="email" name="regisEmail" placeholder="Ingrese su email">
+                <input type="email" class="form-control" id="email" name="registroEmail" placeholder="Ingrese su email">
             </div>
 
         </div>
@@ -36,7 +36,7 @@
                 <span class="input-group-text">
                 <i class="fa-solid fa-key"></i>
                 </span>
-                     <input type="password" class="form-control" id="pwd" name="regisPassword" placeholder="Ingrese su contraseña">
+                     <input type="password" class="form-control" id="pwd" name="registroPassword" placeholder="Ingrese su contraseña">
             </div>
         </div>   
     </div>
@@ -50,7 +50,6 @@
     //creamos el objeto de php e instanciamos metodo estatico
 
     $registro = ControladorFormularios::ctrRegistro();
-
 
     if($registro == "ok"){
 
