@@ -12,7 +12,13 @@ once , se impide la carga de un mismo archivo más de una vez .
 */ 
 
 require_once "controladores/plantilla.contro.php";
-require_once "controladores/formularios.contro.php";
+require_once "controladores/formularios.controlador.php";
+require_once "modelos/formularios.modelo.php";
+
+// require_once "modelos/conexion.php";
+// $conexion = Conexion::conectar();
+// echo '<pre>'; print_r($conexion); echo '</pre>';
+
 
 $plantilla = new ControladorPlantilla();
 $plantilla -> ctrTraerPlantilla(); #treamos al metodo
