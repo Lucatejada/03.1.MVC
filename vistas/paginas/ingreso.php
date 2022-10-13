@@ -1,24 +1,48 @@
-<h2> Ingreso </h2>
+<div class="d-flex justify-content-center p-3">
+    <form method="POST">
+        <h3 class="text-center">Registro</h3>
+        <div class="text-center">
 
-<form>
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="email">Email:</label>
-        <div class="col-sm-10">
-            <input type="email" class="form-control" id="email" placeholder="Enter email">
+            <div class="form-group">
+                <label for="email">Correo Electronico:</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend  d-flex flex-row">
+                        <span class="input-group-text">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <input type="email" class="form-control" id="email" name="ingresoEmail" placeholder="Ingrese su email">
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="pwd">Contraseña:</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend  d-flex flex-row">
+                        <span class="input-group-text">
+                            <i class="fa-solid fa-key"></i>
+                        </span>
+                        <input type="password" class="form-control" id="pwd" name="ingresoPassword" placeholder="Ingrese su contraseña">
+                    </div>
+                </div>
+            </div>
+
+            <?php
+            // // creamos el objeto de php e instanciamos metodo NO estatico
+            // $registro = new controladorFormulario();
+            // $registro -> ctrRegistro();
+
+            //creamos el objeto de php e instanciamos metodo estatico
+
+            $ingreso = new ControladorFormularios();
+            $ingreso -> ctrIngreso(); 
+
+            ?>
+
+            <button type="submit" class="btn btn-primary">Ingresar</button>
         </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="pwd">Password:</label>
-        <div class="col-sm-10">
-            <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            
-        </div>
-    </div>
-    <div class="form-group text-center py-3">
-            <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
-</form>
+    </form>
+
+</div>

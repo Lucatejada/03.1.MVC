@@ -1,3 +1,8 @@
+<?php
+session_start(); #funcion de inicio, variables de sesion 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +10,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title> Ejemplo MVC </title>
+    <title> Ejemplo Modelo Vista Controlador </title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/7/7c/Tumblr_static_memrise_icon_tumblr%281%29.png">
+    
 
 
     <!-- PLUGGINS CSS -->
@@ -36,7 +43,7 @@
 
     <div class="container-fluid">
         <div class="container">
-            <ul class="nav justify-content-center nav-pills">
+            <ul class="nav justify-content-center nav-pills bg bg-light" >
 
                 <?php if (isset($_GET["pagina"])) : ?>
                     <?php if ($_GET["pagina"] == "registro") : ?>
@@ -90,7 +97,7 @@
 
 
                 <?php else :
-                    header('location: ../index.php?pagina=inicio');
+                    header('location: ../index.php?pagina=ingreso');
                 ?>
                 <?php endif  ?>
 
