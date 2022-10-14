@@ -1,13 +1,4 @@
 <?php
-if (!isset($_SESSION["validarIngreso"])) {
-    echo '<script>window.location="index.php?pagina=ingreso";</script>';
-    return;
-} else {
-    if ($_SESSION["validarIngreso"] != "ok") {
-        echo '<script>window.location="index.php?pagina=ingreso";</script>';
-        return;
-    }
-}
 
 $usuarios = ControladorFormularios::ctrSeleccionarRegistros();
 // echo '<pre>'; print_r($usuarios); echo '</pre>'; 
@@ -26,9 +17,9 @@ $usuarios = ControladorFormularios::ctrSeleccionarRegistros();
     </thead>
     <tbody>
 
-        <?php foreach ($usuarios as $key => $value) : ?>
+        <?php foreach ($usuarios as $key => $value): ?>
             <tr>
-                <td><?php echo ($key + 1); ?> </td>
+                <td><?php echo ($key+1); ?> </td>
                 <td><?php echo $value["nombre"]; ?></td>
                 <td><?php echo $value["email"]; ?></td>
                 <td><?php echo $value["fecha"]; ?></td>
@@ -43,7 +34,7 @@ $usuarios = ControladorFormularios::ctrSeleccionarRegistros();
                 </td>
             </tr>
 
-        <?php endforeach ?>
+        <?php endforeach?>
 
     </tbody>
 </table>
