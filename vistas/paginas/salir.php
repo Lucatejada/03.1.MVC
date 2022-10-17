@@ -1,7 +1,7 @@
-<div class="text-center">
-    
-<h2> Salir </h2>
-<a href="index.php?pagina=registro" class="btn btn-primary"> Volver</a>
+<?php
 
-</div>
+session_destroy();
 
+header('location: ../index.php?pagina=ingreso');
+
+?>

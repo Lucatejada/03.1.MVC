@@ -45,7 +45,7 @@ class ControladorFormularios
 
             if ($respuesta["email"] == $_POST["ingresoEmail"] && $respuesta["password"] == $_POST["ingresoPassword"]) {
 
-                $_SESSION["validarIngreso"] = "ok";
+                $_SESSION["validarIngreso"] = true;
                 
                 echo '<script>
                     if ( window.history.replaceState ) {
@@ -55,6 +55,8 @@ class ControladorFormularios
                     </script>';
                 echo '<div class="alert alert-success"> Ingreso exitoso  </div>';
             } else {
+
+                $_SESSION["validarIngreso"] = false;
 
                 // script para guardar una sola vez el usuario de los imputs.
                 // limpiamos el almacenamiento del navegador

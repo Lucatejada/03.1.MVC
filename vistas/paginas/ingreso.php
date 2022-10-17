@@ -10,9 +10,8 @@
                         <span class="input-group-text">
                             <i class="fa-solid fa-envelope"></i>
                         </span>
-                        <input type="email" class="form-control" id="email" name="ingresoEmail" placeholder="Ingrese su email">
+                        <input required type="email" class="form-control" id="email" name="ingresoEmail" placeholder="Ingrese su email">
                     </div>
-
                 </div>
             </div>
 
@@ -24,7 +23,7 @@
                         <span class="input-group-text">
                             <i class="fa-solid fa-key"></i>
                         </span>
-                        <input type="password" class="form-control" id="pwd" name="ingresoPassword" placeholder="Ingrese su contraseña">
+                        <input required type="password" class="form-control" id="pwd" name="ingresoPassword" placeholder="Ingrese su contraseña">
                     </div>
                 </div>
             </div>
@@ -37,7 +36,7 @@
             //creamos el objeto de php e instanciamos metodo estatico
 
             $ingreso = new ControladorFormularios();
-            $ingreso -> ctrIngreso(); 
+            $ingreso->ctrIngreso();
 
             ?>
 
