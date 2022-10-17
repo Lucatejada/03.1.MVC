@@ -2,7 +2,7 @@
 
 if ($_SESSION["validarIngreso"]) {
 
-    $usuarios = ControladorFormularios::ctrSeleccionarRegistros();
+    $usuarios = ControladorFormularios::ctrSeleccionarRegistros(null, null);
     // echo '<pre>'; print_r($usuarios); echo '</pre>'; 
 
 ?>
@@ -27,20 +27,20 @@ if ($_SESSION["validarIngreso"]) {
                     <td><?php echo $value["fecha"]; ?></td>
                     <td>
                         <div class="btn-group">
-                            <button class="btn btn-warning"><i class="fa-solid fa-pencil"></i></button>
+
+                            <!-- dirige al usuario hasta la pgina editar, pasan 2 variables get pagina e id para saber que usuario vamos a editar
+                        con una etiqueta php -->
+
+                            <a href="index.php?pagina=editar&id=<?php echo $value["Id"];?>"
+                            class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
 
                             <button class="btn btn-danger"><i class="fa-solid fa-trash"></i> </button>
-
                         </div>
-
                     </td>
                 </tr>
-
             <?php endforeach ?>
-
         </tbody>
     </table>
-
 <?php
 } else {
     header('location: ../../index.php?pagina=ingreso');
