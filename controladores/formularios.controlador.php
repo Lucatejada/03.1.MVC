@@ -46,7 +46,7 @@ class ControladorFormularios
             if ($respuesta["email"] == $_POST["ingresoEmail"] && $respuesta["password"] == $_POST["ingresoPassword"]) {
 
                 $_SESSION["validarIngreso"] = true;
-                
+
                 echo '<script>
                     if ( window.history.replaceState ) {
                      window.history.replaceState ( null , null , window.location.href ) ;
@@ -71,4 +71,39 @@ class ControladorFormularios
         }
         // echo '<pre>'; print_r($respuesta); echo '</pre>';
     }
-}
+
+    //actualizar registro
+    public function ctrActualizarRegistro()
+    {
+
+        if (isset($_POST["actualizarNombre"])) {
+
+            if ($_POST["actualizarPassword"] != "") {
+                $password = $_POST["actualizarPassword"];
+            } else {
+                $password = $_POST["passwordActual"];
+            }
+            
+
+        }
+            $tabla = "registros";
+
+            $datos = array(
+                "nombre" => $_POST["actualizarNombre"],
+                "email" => $_POST["actualizarEmail"],
+                "password" => $password); 
+
+            $respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
+
+            if($respuesta == "ok"){
+                echo '<script>
+                if ( window.history.replaceState ) {
+                    window.history.replaceState ( null , null , window.location.href ) ;
+                }
+                </script>';
+                echo  '<div class="alert alert-success"> El usuario ha sido registrado </div>';
+            }
+            
+            return $respuesta;
+        }
+    }

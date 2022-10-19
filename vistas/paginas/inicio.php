@@ -5,6 +5,10 @@ if ($_SESSION["validarIngreso"]) {
     $usuarios = ControladorFormularios::ctrSeleccionarRegistros(null, null);
     // echo '<pre>'; print_r($usuarios); echo '</pre>'; 
 
+    $actualizar = new ControladorFormularios();
+    $actualizar -> ctrActualizarRegistro();
+    
+
 ?>
 
     <table class="table table-striped">

@@ -52,17 +52,15 @@
             if ($registro == "ok") {
 
                 //mensaje de registro exitoso!
-
-                echo '<div class="alert alert-success"> El usuario ha sido registrado </div>';
-
                 // script para guardar una sola vez el usuario de los imputs.
                 // limpiamos el almacenamiento del navegador
 
-                echo '<script>
-        if ( window.history.replaceState ) {
-            window.history.replaceState ( null , null , window.location.href ) ;
-        }
-        </script>';
+                echo '<script> 
+                if ( window.history.replaceState ) {
+                    window.history.replaceState ( null , null , window.location.href ) ;
+                }
+                </script>';
+                echo '<div class="alert alert-success"> El usuario ha sido Actualizado </div>';
             }
             ?>
 

@@ -9,7 +9,6 @@ if (isset($_GET["id"])) {
 
 ?>
 
-
 <div class="d-flex justify-content-center p-3">
     <form method="POST">
         <div class="text-center">
@@ -52,10 +51,6 @@ if (isset($_GET["id"])) {
                 </div>
             </div>
 
-            <?php
-
-
-            ?>
 
             <button type="submit" class="btn btn-primary">Actualizar</button>
         </div>
