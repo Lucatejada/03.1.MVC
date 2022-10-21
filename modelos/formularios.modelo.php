@@ -37,12 +37,13 @@ class ModeloFormularios
 
 
     //metodo para seleccionar registros 
+
     static public function mdlSeleccionarRegistros($tabla, $item, $valor)
     {
 
         if ($item == null && $valor == null) {
             $stmt = Conexion::conectar()->prepare("SELECT *, DATE_FORMAT(fecha, '%d/%m/%Y') AS fecha FROM $tabla
-        ORDER BY id DESC");
+        ORDER BY Id");
             $stmt->execute();
             return $stmt->fetchAll();
         } else {
@@ -54,15 +55,17 @@ class ModeloFormularios
         }
     }
 
+    //actualizar REGISTROS
     static public function mdlActualizarRegistro($tabla, $datos)
     {
         
         $stmt = Conexion::conectar()
-            ->prepare("UPDATE $tabla SET nombre=:nombre ,email=[value-3],password=[value-4],fecha=[])");
+            ->prepare("UPDATE $tabla SET nombre=:nombre, email=:email ,password=:password WHERE id =:Id");
 
         $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
         $stmt->bindParam(":email", $datos["email"], PDO::PARAM_STR);
         $stmt->bindParam(":password", $datos["password"], PDO::PARAM_STR);
+        $stmt->bindParam(":Id", $datos["id"], PDO::PARAM_INT);
 
         if ($stmt->execute()) {
             return "ok";

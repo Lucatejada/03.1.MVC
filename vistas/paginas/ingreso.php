@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center p-3">
     <form method="POST">
-        <h3 class="text-center">Registro</h3>
+        <!-- <h3 class="text-center">Registro</h3> -->
         <div class="text-center">
 
             <div class="form-group">
